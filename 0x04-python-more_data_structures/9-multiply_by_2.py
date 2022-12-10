@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def multiply_by_2(a_dictionary):
-    new = {}
-    for i in a_dictionary:
-        new[i] = a_dictionary[i] * 2
-        return (new)
+def max_integer(my_list=[]):
+    if not my_list:
+        return None
+    biggest = 0
+    for index in my_list:
+        if index > biggest:
+            biggest = index
+    return (biggest)
