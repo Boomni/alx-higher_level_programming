@@ -1,26 +1,32 @@
 #!/usr/bin/python3
 
 def list_division(my_list_1, my_list_2, list_length):
-    # Initialize a new list with zeros to store the division results
+    # Initialize the result list with zeros
     result = [0] * list_length
-    
-    # Iterate over the range of the desired list length
+
+    # Iterate through the elements of the result list
     for i in range(list_length):
         try:
-            # Try to divide the elements at the same position in both lists
-            result[i] = my_list_1[i] / my_list_2[i]
-        except (TypeError, ZeroDivisionError):
-            # If the elements are not numbers or the division is not possible, print the appropriate message
-            if isinstance(my_list_1[i], (int, float)) and isinstance(my_list_2[i], (int, float)):
-                print("Wrong type")
-            else:
-                print("Division by 0")
+            # Try to get the i-th element from each list
+            element_1 = my_list_1[i]
+            element_2 = my_list_2[i]
+
+            if not isinstance(element_1, (int, float)):
+                print("wrong type")
+                continue
+            if not isinstance(element_2, (int, float)):
+                print("wrong type")
+                continue
+
+            # Try to divide the elements
+            result[i] = element_1 / element_2
+        except ZeroDivisionError:
+            print("division by 0")
+            continue
         except IndexError:
-            # If one of the lists is too short, print the appropriate message
-            print("Out of range")
+            print("out of range")
+            continue
         finally:
-            # This block of code is always executed after the try/except blocks
             pass
-    
-    # Return the result list
-    return (result)
+
+    return result
