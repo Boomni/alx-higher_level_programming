@@ -32,10 +32,12 @@ class Square:
 
     @property
     def position(self):
+        """get position"""
         return (self.__position)
 
     @position.setter
     def position(self, value):
+        """set position"""
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(i, int) and i >= 0 for i in value)):
@@ -43,9 +45,11 @@ class Square:
         self._position = value
 
     def area(self):
+        """return area"""
         return (self.__size * self.__size)
 
     def my_print(self):
+        """print"""
         if self.size == 0:
             print()
         else:
