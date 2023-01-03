@@ -7,7 +7,7 @@ def matrix_mul(m_a, m_b):
     Multiply two matrices m_a and m_b.
 
     m_a and m_b must be lists of lists of integers or floats.
-    m_a and m_b must be rectangles (all rows must have the same number of columns).
+    m_a and m_b must be rectangles
     m_a and m_b must have the same number of rows.
 
     Return the result of the matrix multiplication of m_a and m_b.

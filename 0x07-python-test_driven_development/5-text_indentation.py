@@ -3,13 +3,13 @@
 def text_indentation(text):
     """
     Indent the given text by adding two newlines after ".", "?", and ":".
-    
+
     Args:
     - text (str): The text to be indented.
-    
+
     Returns:
     None
-    
+
     Raises:
     - TypeError: If `text` is not a string.
     """
