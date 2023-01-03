@@ -1,0 +1,57 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+___________________________________________________________________________
+>>> text_indentation("Hello")
+Hello
+
+__________________________________________________________________________
+>>> text_indentation("Hello.")
+Hello.
+<BLANKLINE>
+<BLANKLINE>
+
+__________________________________________________________________________
+>>> text_indentation("Hello?")
+Hello?
+<BLANKLINE>
+<BLANKLINE>
+
+_________________________________________________________________________
+>>> text_indentation("Hello:")
+Hello:
+<BLANKLINE>
+<BLANKLINE>
+
+________________________________________________________________________
+>>> text_indentation("   Hello.   ")
+   Hello.
+<BLANKLINE>
+<BLANKLINE>
+
+________________________________________________________________________
+>>> text_indentation(" Hello? ")
+ Hello?
+<BLANKLINE>
+<BLANKLINE>
+
+_______________________________________________________________________
+>>> text_indentation(" Hi: Hello?    Hiya. ")
+ Hi:
+<BLANKLINE>
+Hello?
+<BLANKLINE>
+Hiya.
+<BLANKLINE>
+<BLANKLINE>
+
+____________________________________________________________________________
+>>> text_indentation("Hi:Hello?Hiya.")
+Hi:
+<BLANKLINE>
+Hello?
+<BLANKLINE>
+Hiya.
+<BLANKLINE>
+<BLANKLINE>
+
+____________________________________________________________________________
