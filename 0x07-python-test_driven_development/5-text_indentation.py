@@ -19,17 +19,17 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    skip_next_char = False
-
-    for char in text:
-        if skip_next_char:
-            skip_next_char = False
-            continue
-        if char in {'.', '?', ':'}:
-            print(char)
-            print()
-            # Set the skip_next_char flag to True to skip the next iteration
-            skip_next_char = True
-        # Otherwise, just print the character
-        else:
-            print(char, end="")
+    flag = 0
+    for a in text:
+        if flag == 0:
+            if a == ' ':
+                continue
+            else:
+                flag = 1
+        if flag == 1:
+            if a == '?' or a == '.' or a == ':':
+                print(a)
+                print()
+                flag = 0
+            else:
+                print(a, end="")
