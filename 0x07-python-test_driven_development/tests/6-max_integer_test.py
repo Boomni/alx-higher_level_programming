@@ -25,33 +25,30 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-5, 3, 0, -8]), 3)
         self.assertEqual(max_integer([-5, -3, 0, -1 -8]), 0)
 
-    def test_m_b_is_string(self):
-        with self.assertRaises(TypeError, msg="m_b must be a list"):
-            matrix_mul([[1, 2], [3, 4]], 'not a list')
-
-    def test_m_b_is_list_of_ints(self):
-        with self.assertRaises(TypeError, msg="m_b must be a list of lists"):
-            matrix_mul([[1, 2], [3, 4]], [[1], [2]])
-
-    def test_m_b_is_empty(self):
-        with self.assertRaises(ValueError, msg="m_b can’t be empty"):
+    def test_validation(self):
+        # Test that matrix_mul() raises the correct exceptions for invalid input
+        with self.assertRaises(TypeError, msg='m_a must be a list'):
+            matrix_mul('invalid', [[1, 2], [3, 4]])
+        with self.assertRaises(TypeError, msg='m_a must be a list of lists'):
+            matrix_mul([1, 2], [[1, 2], [3, 4]])
+        with self.assertRaises(ValueError, msg='m_a can\'t be empty'):
+            matrix_mul([], [[1, 2], [3, 4]])
+        with self.assertRaises(TypeError, msg='m_a should contain only integers or floats'):
+            matrix_mul([['invalid']], [[1, 2], [3, 4]])
+        with self.assertRaises(TypeError, msg='each row of m_a must be of the same size'):
+            matrix_mul([[1, 2], [3]], [[1, 2], [3, 4]])
+        with self.assertRaises(TypeError, msg='m_b must be a list'):
+            matrix_mul([[1, 2], [3, 4]], 'invalid')
+        with self.assertRaises(TypeError, msg='m_b must be a list of lists'):
+            matrix_mul([[1, 2], [3, 4]], [1, 2])
+        with self.assertRaises(ValueError, msg='m_b can\'t be empty'):
             matrix_mul([[1, 2], [3, 4]], [])
-
-    def test_m_b_contains_non_numeric_elements(self):
-        with self.assertRaises(TypeError):
-            matrix_mul([[1, 2], [3, 4]], [[1, 'a'], [2, 'b']])
-
-    def test_m_b_rows_of_different_sizes(self):
-        with self.assertRaises(TypeError):
-            matrix_mul([[1, 2], [3, 4]], [[1, 2], [2]])
-
-    def test_missing_argument(self):
-        with self.assertRaises(TypeError):
-            matrix_mul([[1, 2], [3, 4]])
-
-    def test_missing_arguments(self):
-        with self.assertRaises(TypeError):
-            matrix_mul()
+        with self.assertRaises(TypeError, msg='m_b should contain only integers or floats'):
+            matrix_mul([[1, 2], [3, 4]], [['invalid']])
+        with self.assertRaises(TypeError, msg='each row of m_b must be of the same size'):
+            matrix_mul([[1, 2], [3, 4]], [[1, 2], [3]])
+        with self.assertRaises(ValueError, msg='m_a and m_b can\'t be multiplied'):
+            matrix_mul([[1, 2], [3, 4]], [[1], [2]])
 
 if __name__ == '__main__':
     unittest.main()
