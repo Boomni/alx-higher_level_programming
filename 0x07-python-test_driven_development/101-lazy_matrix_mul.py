@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
     """
     Multiply two matrices using NumPy.
@@ -15,9 +16,9 @@ def lazy_matrix_mul(m_a, m_b):
     - TypeError: If `m_a` or `m_b` is not a list.
     - TypeError: If `m_a` or `m_b` is not a list of lists.
     - ValueError: If `m_a` or `m_b` is an empty list.
-    - TypeError: If `m_a` or `m_b` contains an element that is not an integer or float.
-    - TypeError: If the rows of `m_a` or `m_b` are not all the same size.
-    - ValueError: If the number of columns in `m_a` is not equal to the number of rows in `m_b`.
+    - TypeError: If `m_a` or `m_b` contains an element not integer or float.
+    - TypeError: If rows of `m_a` or `m_b` are not all the same size.
+    - ValueError: If number of columns in `m_a` is != number of rows in `m_b`.
     """
     # Validate m_a
     if not isinstance(m_a, list):
@@ -43,7 +44,7 @@ def lazy_matrix_mul(m_a, m_b):
     if not all(len(row) == len(m_b[0]) for row in m_b):
         raise TypeError('each row of m_b must be of the same size')
 
-    # Check that the number of columns in m_a is equal to the number of rows in m_b
+    # Check that number of columns in m_a is == number of rows in m_b
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
