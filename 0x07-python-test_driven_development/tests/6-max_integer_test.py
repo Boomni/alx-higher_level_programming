@@ -26,15 +26,15 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-5, -3, 0, -1 -8]), 0)
 
     def test_m_b_is_string(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError, msg="m_b must be a list"):
             matrix_mul([[1, 2], [3, 4]], 'not a list')
 
     def test_m_b_is_list_of_ints(self):
-        with self.assertRaises(TypeError):
+        with self.assertRaises(TypeError, msg="m_b must be a list of lists"):
             matrix_mul([[1, 2], [3, 4]], [[1], [2]])
 
     def test_m_b_is_empty(self):
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ValueError, msg="m_b can’t be empty"):
             matrix_mul([[1, 2], [3, 4]], [])
 
     def test_m_b_contains_non_numeric_elements(self):
