@@ -55,8 +55,12 @@ Add float value to float value
 >>> add_integer(100.3,2.7)
 102
 
->>> add_integer(1.1, 2.2)
-3
+__________________________________________________________________________________
+Testcase: Float overflow
+>>> add_integer(1e308, 1e308)
+Traceback (most recent call last):
+	...
+OverflowError: integer addition result too large to convert to int
 
 __________________________________________________________________________________
 Only first invalid format parameter
