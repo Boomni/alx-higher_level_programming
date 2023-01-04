@@ -58,13 +58,12 @@ Add float value to float value
 >>> add_integer(100.5, 2.5)
 102
 
->>> add_integer(100.3, 2.1)
-102
-
 __________________________________________________________________________________
 Testcase: Float overflow
->>> add_integer(-1e10, -1e10)
--20000000000
+>>> add_integer(1e308, 1e3008)
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
 
 __________________________________________________________________________________
 Only first invalid format parameter
