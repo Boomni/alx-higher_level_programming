@@ -25,6 +25,34 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([-5, 3, 0, -8]), 3)
         self.assertEqual(max_integer([-5, -3, 0, -1 -8]), 0)
 
+    def test_m_b_is_string(self):
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], 'not a list')
+
+    def test_m_b_is_list_of_ints(self):
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], [[1], [2]])
+
+    def test_m_b_is_empty(self):
+        with self.assertRaises(ValueError):
+            matrix_mul([[1, 2], [3, 4]], [])
+
+    def test_m_b_contains_non_numeric_elements(self):
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], [[1, 'a'], [2, 'b']])
+
+    def test_m_b_rows_of_different_sizes(self):
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], [[1, 2], [2]])
+
+    def test_missing_argument(self):
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]])
+
+    def test_missing_arguments(self):
+        with self.assertRaises(TypeError):
+            matrix_mul()
+
 if __name__ == '__main__':
     unittest.main()
 
