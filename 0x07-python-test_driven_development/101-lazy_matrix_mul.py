@@ -22,6 +22,7 @@ def lazy_matrix_mul(m_a, m_b):
     - TypeError: If rows of `m_a` or `m_b` are not all the same size.
     - ValueError: If number of columns in `m_a` is != number of rows in `m_b`.
     """
+
     # Validate m_a
     if not isinstance(m_a, list):
         raise TypeError('m_a must be a list')
