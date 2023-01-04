@@ -55,6 +55,9 @@ Add float value to float value
 >>> add_integer(100.3,2.7)
 102
 
+>>> add_integer(1.1, 2.2)
+3
+
 __________________________________________________________________________________
 Only first invalid format parameter
 >>> add_integer('a')
@@ -89,4 +92,9 @@ Traceback (most recent call last):
 	...
 TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
 
-
+____________________________________________________________________________________
+Testcase: cannot convert float NaN to integer
+>>> add_integer(float('nan'), 2)
+Traceback (most recent call last):
+	...
+ValueError: cannot convert float NaN to integer
