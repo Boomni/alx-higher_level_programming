@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Text indentation"""
+
 
 def text_indentation(text):
     """
@@ -26,7 +28,7 @@ def text_indentation(text):
             substrings.append("\n\n")
             i += 1
             while i < len(text) and text[i] == " ":
-                i += 1
+                i -= 1
         else:
             substrings.append(c)
             i += 1
