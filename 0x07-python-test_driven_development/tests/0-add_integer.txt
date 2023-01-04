@@ -47,7 +47,7 @@ Add float value to negative value
 
 __________________________________________________________________________________
 Add float value to positive value
->>> add_integer(100.3,2)
+>>> add_integer(100.3, 2)
 102
 
 __________________________________________________________________________________
@@ -58,12 +58,13 @@ Add float value to float value
 >>> add_integer(100.5, 2.5)
 102
 
+>>> add_integer(100.3, 2.1)
+102
+
 __________________________________________________________________________________
 Testcase: Float overflow
->>> add_integer(1e308, 1e308)
-Traceback (most recent call last):
-	...
-OverflowError: integer addition result too large to convert to int
+>>> add_integer(-1e10, -1e10)
+-20000000000
 
 __________________________________________________________________________________
 Only first invalid format parameter
