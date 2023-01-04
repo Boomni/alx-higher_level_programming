@@ -33,4 +33,3 @@ def text_indentation(text):
         # Otherwise, just print the character
         else:
             print(char, end="")
-    print()
