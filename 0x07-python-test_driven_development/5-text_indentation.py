@@ -18,18 +18,19 @@ def text_indentation(text):
 
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    spliter = [".", "?", ":"]
-    substrings = []
-    i = 0
-    while i < len(text):
-        c = text[i]
-        if c in spliter:
-            substrings.append(c)
-            substrings.append("\n\n")
-            i += 1
-            while i < len(text) and text[i] == " ":
-                i -= 1
+
+    skip_next_char = False
+
+    for char in text:
+        if skip_next_char:
+            skip_next_char = False
+            continue
+        if char in {'.', '?', ':'}:
+            print(char)
+            print()
+            # Set the skip_next_char flag to True to skip the next iteration
+            skip_next_char = True
+        # Otherwise, just print the character
         else:
-            substrings.append(c)
-            i += 1
-    print("".join(substrings))
+            print(char, end="")
+    print()
