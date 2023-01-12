@@ -12,4 +12,6 @@ def is_kind_of_class(obj, a_class):
                 a class that inherited from, the specified class
         Otherwise False
     """
-    return (type(obj) is a_class) or (hasattr(obj, "__class__") and issubclass(obj.__class__, a_class))
+    i_specified = type(obj) is a_class
+    i_class_inherited = hasattr(obj, "__class__") and issubclass(obj.__class__, a_class)
+    return i_specified or i_class_inherited
