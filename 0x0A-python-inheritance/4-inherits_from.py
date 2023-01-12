@@ -15,4 +15,4 @@ def inherits_from(obj, a_class):
             (directly or indirectly) from the specified class, otherwise False.
     :rtype: bool
     """
-    return hasattr(obj, "__class__") and issubclass(obj.__class__, a_class)
+    return isinstance(obj, a_class)
