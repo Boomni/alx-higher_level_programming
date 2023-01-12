@@ -1,0 +1,26 @@
+Importing the Module:
+	>>> validator = __import__('7-base_geometry').BaseGeometry
+
+Checking if module is documented:
+	>>> module_doc = __import__("7-base_geometry").__doc__
+        >>> len(module_doc) > 1
+        True
+
+Checking for class docstring:
+        >>> class_doc = __import__("7-base_geometry").BaseGeometry.__doc__
+        >>> len(class_doc) > 1
+        True
+
+Checking for method docstring:
+        >>> method_doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+        >>> len(method_doc) > 1
+        True
+
+Checking for Normal cases(string and integer):
+	>>> validator.integer_validator(, "my_int", 12)
+
+	>>> validator.integer_validator("Hi", 1)
+
+Checking for Not integer cases:
+	>>> validator.integer_validator("Hello", 12.5)
+	
