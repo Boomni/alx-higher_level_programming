@@ -6,7 +6,7 @@ def inherits_from(obj, a_class):
     """
     Check if an object is an instance of a class that inherited \
             (directly or indirectly) from the specified class.
-    
+
     :param obj: The object to check.
     :type obj: object
     :param a_class: The class to check against.
@@ -15,4 +15,6 @@ def inherits_from(obj, a_class):
             (directly or indirectly) from the specified class, otherwise False.
     :rtype: bool
     """
-    return isinstance(obj, a_class)
+    if issubclass(type(obj), a_class) and type(obj) != a_class:
+        return True
+    return False
