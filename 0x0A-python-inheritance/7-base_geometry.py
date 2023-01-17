@@ -28,10 +28,8 @@ class BaseGeometry:
             TypeError: if value is not an integer
             ValueError: if value is less than 1
         """
-        self.name = name
-        self.value = value
 
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 1:
+        if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))

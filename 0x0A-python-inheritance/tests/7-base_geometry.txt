@@ -1,8 +1,8 @@
 Importing the Module:
-	>>> validator = __import__('7-base_geometry').BaseGeometry
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 Checking if module is documented:
-	>>> module_doc = __import__("7-base_geometry").__doc__
+        >>> module_doc = __import__("7-base_geometry").__doc__
         >>> len(module_doc) > 1
         True
 
@@ -16,11 +16,30 @@ Checking for method docstring:
         >>> len(method_doc) > 1
         True
 
+
+	>>> validator = BaseGeometry()
+
 Checking for Normal cases(string and integer):
-	>>> validator.integer_validator(, "my_int", 12)
+        >>> validator.integer_validator("my_int", 12)
 
-	>>> validator.integer_validator("Hi", 1)
+        >>> validator.integer_validator("Hi", 1)
 
-Checking for Not integer cases:
-	>>> validator.integer_validator("Hello", 12.5)
-	
+Checking for not integer(string and string):
+        >>> validator.integer_validator("name", "John")
+        Traceback (most recent call last):
+                ...
+        TypeError: name must be an integer
+
+Checking if 0:
+        >>> validator.integer_validator("age", 0)
+        Traceback (most recent call last):
+                ...
+        ValueError: age must be greater than 0
+
+
+Checking Area:
+	>>> validator.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
