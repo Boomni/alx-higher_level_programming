@@ -3,5 +3,10 @@
 
 
 def read_file(filename=""):
-    with open(filename , "r", encoding="utf-8") as f:
+    """
+    This method takes filename as argument
+    Reads and prints its contents to stdout
+    """
+
+    with open(filename, "r", encoding="utf-8") as f:
         print(f.read())
