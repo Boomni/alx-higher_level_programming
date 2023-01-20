@@ -95,5 +95,5 @@ class Rectangle(Base):
         """Public method that prints rectangle to stdout"""
         for i in range(self.__height):
             for j in range(self.__width):
-                print("#", end= "")
+                print("#", end="")
             print()
