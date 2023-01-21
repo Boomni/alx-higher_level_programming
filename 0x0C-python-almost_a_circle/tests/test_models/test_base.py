@@ -1,31 +1,30 @@
 #!/usr/bin/python3
+"""Module for unittest"""
 import unittest
 from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def test_base_class(self):
-        """Test the basic functionality of the Base class."""
+    """Testcases for Unittesting of class Base"""
+
+    def test_base_auto_id(self):
+        """Test of Base() for assigning automatically an ID exists"""
+        b1 = Base()
+        b2 = Base()
+        assert b1.id == 1
+        assert b2.id == 2
+
+    def test_base_auto_id_increment(self):
+        """Test of Base() for assigning automatically an ID + 1 of the previous exists"""
         b1 = Base()
         b2 = Base()
         b3 = Base()
-        b4 = Base(12)
+        assert b3.id == 5
 
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-        self.assertEqual(b4.id, 12)
-
-    def test_no_arg(self):
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id, b2.id - 1)
-
-    def test_three_bases(self):
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        self.assertEqual(b1.id, b3.id - 2)
+    def test_base_passed_id(self):
+        """Test of Base(89) saving the ID passed exists"""
+        b1 = Base(89)
+        assert b1.id == 89
 
 
 if __name__ == '__main__':
