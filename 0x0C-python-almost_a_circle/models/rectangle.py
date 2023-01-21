@@ -101,4 +101,4 @@ class Rectangle(Base):
     def __str__(self):
         """Update the class Rectangle by overriding the __str__ method"""
         message = "[Rectangle] ({}) {}/{} - {}/{}"
-        return (message.format(self.id, self.x, self.y, self.width, self.height))
+        return message.format(self.id, self.x, self.y, self.width, self.height)
