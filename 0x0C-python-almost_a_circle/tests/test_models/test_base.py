@@ -31,5 +31,10 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_empty_list(self):
         self.assertEqual(Base.to_json_string([]), json.dumps([]))
 
+    def test_from_json_string_type(self):
+        list_input = [{"id": 89, "width": 10, "height": 4}]
+        json_list_input = Base.to_json_string(list_input)
+        self.assertEqual(Base.to_json_string(list_input), json_list_input)
+
 if __name__ == '__main__':
     unittest.main()
