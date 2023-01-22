@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module for Base class"""
-
+import json
 
 class Base:
     """A base class for other classes to inherit from.
@@ -25,3 +25,9 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None:
+            return None
+        return json.dumps(list_dictionaries)

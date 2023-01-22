@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module for unittest"""
+import json
 import unittest
 from models.base import Base
 
@@ -25,6 +26,10 @@ class TestBase(unittest.TestCase):
         """Test of Base(89) saving the ID passed exists"""
         b1 = Base(89)
         assert b1.id == 89
+
+
+    def test_to_json_string_empty_list(self):
+        self.assertEqual(Base.to_json_string([]), json.dumps([]))
 
 if __name__ == '__main__':
     unittest.main()
