@@ -6,7 +6,10 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    """Testcases for Unittesting of class Base"""
+    """Testcases for Unittesting of class Rectangle"""
+
+    def test_rectangle_is_base(self):
+        self.assertIsInstance(Rectangle(10, 2), Base)
 
     def test_rectangle_auto_id(self):
         """Test of Base() for assigning automatically an ID exists"""
