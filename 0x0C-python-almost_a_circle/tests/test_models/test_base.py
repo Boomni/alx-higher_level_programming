@@ -26,6 +26,5 @@ class TestBase(unittest.TestCase):
         b1 = Base(89)
         assert b1.id == 89
 
-
 if __name__ == '__main__':
     unittest.main()
