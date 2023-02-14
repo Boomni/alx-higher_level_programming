@@ -89,7 +89,7 @@ class Rectangle(Base):
 
     def area(self):
         """
-        Public method that returns area of rectangle instatnce 
+        Public method that returns area of rectangle instatnce
         Args:
             No aarguments
         Returns:
