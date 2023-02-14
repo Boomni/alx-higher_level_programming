@@ -28,6 +28,7 @@ class Base:
 
 
     def to_json_string(list_dictionaries):
+	""" This function serializes a list of inputs """
         if list_dictionaries is None:
             return None
         return json.dumps(list_dictionaries)
@@ -41,5 +42,6 @@ class Base:
             Otherwise - the Python list represented by json_string.
         """
         if json_string is None:
+	""" Deserialization """
             return None
         return json.loads(json_string)
