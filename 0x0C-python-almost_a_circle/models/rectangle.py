@@ -109,8 +109,10 @@ class Rectangle(Base):
             None
 
         """
+        for _ in range(self.y):
+            print()
         for _ in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.x, "#" * self.__width)
 
     def __str__(self):
         """
