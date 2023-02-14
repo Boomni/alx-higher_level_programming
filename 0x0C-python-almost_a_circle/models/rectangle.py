@@ -97,3 +97,17 @@ class Rectangle(Base):
 
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        Public method that prints to stdout rectangle instance with #
+
+        Args:
+            None
+
+        Returns:
+            None
+
+        """
+        for _ in range(self.__height):
+            print("#" * self.__width)
