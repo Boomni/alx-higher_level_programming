@@ -86,33 +86,3 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-    def area(self):
-        """Public method that returns the area value of the rectangle"""
-        return (self.__width * self.__height)
-
-    def display(self):
-        """Public method that prints rectangle to stdout"""
-        for i in range(self.y):
-            print()
-        for i in range(self.height):
-            print(" "*self.x, end="")
-            print("#"*self.width)
-
-    def __str__(self):
-        """Update the class Rectangle by overriding the __str__ method"""
-        message = "[Rectangle] ({}) {}/{} - {}/{}"
-        return message.format(self.id, self.x, self.y, self.width, self.height)
-
-    def update(self, *args):
-        """Public methodthat assigns an argument to each attribute"""
-        if len(args) > 0:
-            self.id = args[0]
-        if len(args) > 1:
-            self.width = args[1]
-        if len(args) > 2:
-            self.height = args[2]
-        if len(args) > 3:
-            self.x = args[3]
-        if len(args) > 4:
-            self.y = args[4]
