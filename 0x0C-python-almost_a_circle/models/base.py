@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for Base class"""
 
+
 class Base:
     """A base class for other classes to inherit from.
 
