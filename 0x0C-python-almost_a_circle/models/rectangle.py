@@ -129,12 +129,15 @@ class Rectangle(Base):
         string = "[Rectangle] ({}) {}/{} - {}/{}"
         return string.format(self.id, self.x, self.y, self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Public method that assigns an argument to each attribute
         Args:
-            *args: Variable number of arguments which are \
+            *args:
+                Variable number of arguments which are \
                     (id, width, height, x and y)
+            **kwargs:
+                variable number of key/value pairs
         Returns:
             The return statement is handled by __str__ method
         """
