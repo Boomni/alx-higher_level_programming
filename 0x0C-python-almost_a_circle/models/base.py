@@ -40,7 +40,7 @@ class Base:
             JSON string representation: if not None or not empty
 
         """
-        if list_dictionaries is not None or len(list_dictionaries) != 0:
+        if list_dictionaries is not None:
             return json.dumps(list_dictionaries)
         else:
             return "[]"
