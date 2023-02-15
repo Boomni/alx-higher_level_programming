@@ -55,10 +55,10 @@ class Base:
             cls:
             list_objs: list of instances who inherits of Base
         """
+        if list_objs is None or list_objs == []:
+            jstr = "[]"
+        else:
+            jstr = cls.to_json_string([o.to_dictionary() for o in list_objs])
         filename = cls.__name__ + ".json"
-        list_of_dictionaries = []
-        for items in list_objs:
-            list_of_dictionaries.append(items.to_dictionary())
-        json_str = cls.to_json_string(list_of_dictionaries)
         with open(filename, 'w') as f:
-            f.write(json_str)
+                f.write(jstr)
