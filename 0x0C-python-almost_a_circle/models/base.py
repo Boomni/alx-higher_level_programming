@@ -29,7 +29,8 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """
-        Public method that returns the JSON string representation of list_dictionaries
+        Public method that returns JSON string representation of
+        list_dictionaries
 
         Args:
             list_dictionaries: list of dictionaries
