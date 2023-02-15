@@ -92,14 +92,10 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
-        if cls.__name__ == "Rectangle" or cls.__name__ == "Square"
-            file = cls.__name__ + ".json"
-        if file is not None:
-            with open(file, 'r') as f:
-                content = cls.from_json_string(f.read())
-            new_list = []  # list to append the objs
-            for item in content:
-                dict1 = cls.create(**item)  # create the obj
-                new_list.append(dict1)
-            return new_list
-        return []
+        try:
+            filename = cls.__name__ + '.json'
+            with open(filename, mode='r') as f:
+                d = cls.from_json_string(f.read())
+            return [cls.create(**x) for x in d]
+        except FileNotFoundError:
+            return []
