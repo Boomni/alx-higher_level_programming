@@ -92,7 +92,8 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
-        file = cls.__name__ + ".json"
+        if cls.__name__ == "Rectangle" or cls.__name__ == "Square"
+            file = cls.__name__ + ".json"
         if file is not None:
             with open(file, 'r') as f:
                 content = cls.from_json_string(f.read())
