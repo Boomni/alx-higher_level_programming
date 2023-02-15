@@ -61,4 +61,4 @@ class Base:
             jstr = cls.to_json_string([o.to_dictionary() for o in list_objs])
         filename = cls.__name__ + ".json"
         with open(filename, 'w') as f:
-                f.write(jstr)
+            f.write(jstr)
