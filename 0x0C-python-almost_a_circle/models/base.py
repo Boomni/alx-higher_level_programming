@@ -75,9 +75,6 @@ class Base:
         Returns:
             the list represented by json_string
         """
-        the_list = []
-        if json_string is not None or json_string != "":
-            the_list = json.loads(json_string)
-            return the_list
-        else:
-            return []
+        if json_string:
+            return json.loads(json_string)
+        return []
