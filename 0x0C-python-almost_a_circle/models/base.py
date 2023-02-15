@@ -78,3 +78,11 @@ class Base:
         if json_string:
             return json.loads(json_string)
         return []
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set
+        """
+        dummy_obj = cls(1, 1)
+        dummy_obj.update(**dictionary)
+        return dummy_obj
