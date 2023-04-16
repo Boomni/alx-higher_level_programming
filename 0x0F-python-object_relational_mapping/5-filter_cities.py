@@ -15,11 +15,18 @@ if __name__ == '__main__':
                          db=sys.argv[3],
                          port=3306)
     cursor = db.cursor()
-    query = "SELECT * FROM cities " \
-            "INNER JOIN cities ON states.id=cities.state_id;"
-    cursor.execute(query)
-    data = cursor.fetchall()
-    for row in data:
-        print(row)
+    query = """
+            SELECT cities.name
+            FROM cities
+            INNER JOIN states ON cities.state_id = states.id
+            WHERE states.name = '{}'
+            ORDER BY cities.id ASC;
+            """
+    cursor.execute(query.format(sys.argv[4]))
+    cities = cursor.fetchall()
+    city_names = []
+    for city in cities:
+        city_names.append(city[0])
+    print(", ".join(city_names))
     cursor.close()
     db.close()
