@@ -15,8 +15,8 @@ if __name__ == '__main__':
                          db=sys.argv[3],
                          port=3306)
     cursor = db.cursor()
-    query = "SELECT * FROM states ORDER BY id ASC"
-    cursor.execute(query)
+    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
+    cursor.execute(query.format(sys.argv[4]))
     data = cursor.fetchall()
     for row in data:
         if (row[1] == sys.argv[4]):
