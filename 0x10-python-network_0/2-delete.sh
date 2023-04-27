@@ -1,3 +1,3 @@
 #!/bin/bash
-# Takes in a URL, sends a GET request to the URL, and displays the body of the response
-curl -sX "DELETE" "$1"
+# Displays all HTTP methods that the server will accept
+curl -sI "$1" | grep Allow | cut -d ' ' -f2-
