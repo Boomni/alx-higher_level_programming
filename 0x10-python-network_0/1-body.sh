@@ -3,5 +3,5 @@
 
 RESPONSE=$(curl -sI "$1" | grep HTTP | awk '{print $2}')
 if [ "$RESPONSE" -eq 200 ]; then
-	curl -s "$1"
+	curl -s "$1" -X GET
 fi
